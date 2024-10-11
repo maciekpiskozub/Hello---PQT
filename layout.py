@@ -12,7 +12,23 @@ from PyQt6 import QtCore, QtGui, QtWidgets
 class Ui_Dialog(object):
     def setupUi(self, Dialog):
         Dialog.setObjectName("Dialog")
-        Dialog.resize(449, 502)
+        Dialog.resize(782, 621)
+        self.label = QtWidgets.QLabel(parent=Dialog)
+        self.label.setGeometry(QtCore.QRect(100, 120, 181, 41))
+        font = QtGui.QFont()
+        font.setPointSize(16)
+        self.label.setFont(font)
+        self.label.setObjectName("label")
+        self.nameEdit = QtWidgets.QLineEdit(parent=Dialog)
+        self.nameEdit.setGeometry(QtCore.QRect(230, 130, 113, 21))
+        self.nameEdit.setObjectName("nameEdit")
+        self.resultLabel = QtWidgets.QLabel(parent=Dialog)
+        self.resultLabel.setGeometry(QtCore.QRect(100, 160, 211, 16))
+        self.resultLabel.setText("")
+        self.resultLabel.setObjectName("resultLabel")
+        self.okButton = QtWidgets.QPushButton(parent=Dialog)
+        self.okButton.setGeometry(QtCore.QRect(150, 200, 113, 32))
+        self.okButton.setObjectName("okButton")
 
         self.retranslateUi(Dialog)
         QtCore.QMetaObject.connectSlotsByName(Dialog)
@@ -20,3 +36,5 @@ class Ui_Dialog(object):
     def retranslateUi(self, Dialog):
         _translate = QtCore.QCoreApplication.translate
         Dialog.setWindowTitle(_translate("Dialog", "Dialog"))
+        self.label.setText(_translate("Dialog", "Podaj swoje imie"))
+        self.okButton.setText(_translate("Dialog", "OK"))
